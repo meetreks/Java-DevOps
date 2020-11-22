@@ -46,20 +46,15 @@
 		</plugins>
 	</build>
 	
-	<repositories>
-    		<repository>
-      		  <id>maven-group</id>
-      		  <url>http://your-host:8081/repository/maven-group/</url>
-    		</repository>
-  	</repositories>
+	
 	
 	<distributionManagement>
     		<snapshotRepository>
-      		  <id>nexus-snapshots</id>
+      		  <id>nexusdeploymentrepo</id>
       		  <url>http://127.0.0.1:8081/repository/maven-snapshots/</url>
     		</snapshotRepository>
     		<repository>
-      		  <id>nexus-releases</id>
+      		  <id>nexusdeploymentrepo</id>
       		  <url>http://127.0.0.1:8081/repository/maven-releases/</url>
     		</repository>
   	</distributionManagement>
