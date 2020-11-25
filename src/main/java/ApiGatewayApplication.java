@@ -15,6 +15,7 @@ import com.example.model.gateway;
  * 2. APIZuul now does the same thing, and just routes everything via the gateway which is the 
  *    name of the spring.application.name in the properties file
  * 3. Just added this to Test Webhook with Jenkins. Now in the Pipeline DSL. Om Sai Ram - Please help me.
+ * 4. Trying SonarQube in the Pipeline
  * **/
 @RestController
 @SpringBootApplication(scanBasePackages = {"com.example.controler"})
