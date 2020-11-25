@@ -14,7 +14,7 @@ import com.example.model.gateway;
  * 1. APIGateway directly runs a service at port = 8090 and sample methods from the POJO classes
  * 2. APIZuul now does the same thing, and just routes everything via the gateway which is the 
  *    name of the spring.application.name in the properties file
- * 3. Just added this to Test Webhook with Jenkins
+ * 3. Just added this to Test Webhook with Jenkins. Now in the Pipeline DSL.
  * **/
 @RestController
 @SpringBootApplication(scanBasePackages = {"com.example.controler"})
