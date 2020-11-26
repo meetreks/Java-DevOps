@@ -16,7 +16,7 @@ import com.example.model.gateway;
  *    name of the spring.application.name in the properties file
  * 3. Just added this to Test Webhook with Jenkins. Now in the Pipeline DSL. Om Sai Ram - Please help me.
  * 4. Trying SonarQube in the Pipeline
- * 5. Trying JFrog Repoistry Archive pls
+ * 5. Trying JFrog Repoistry Archive. Pls Help me.
  * **/
 @RestController
 @SpringBootApplication(scanBasePackages = {"com.example.controler"})
