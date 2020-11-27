@@ -1,0 +1,44 @@
+pipeline {
+    agent any
+    triggers {
+        githubPush()
+    }
+    stages {
+        stage('Pull Git Trigger') {
+            steps {
+                git 'https://github.com/meetreks/Java-DevOps.git'
+            }
+        }
+        stage('Maven-Clean') {
+            steps {
+                bat "mvn -Dmaven.test.failure.ignore=true clean package"
+            }
+        }
+
+        stage('Sonarqube') {
+            environment {
+                scannerHome = tool 'SonarQubeScanner'
+            }
+            steps {
+                withSonarQubeEnv('sonarqube') {
+                    bat """
+                    ${scannerHome}/bin/sonar-scanner \
+                    -Dsonar.projectKey=myfirstproject \
+                    -Dsonar.projectName=myfirstproject \
+                    -Dsonar.projectVersion=1.0.0-alpha \
+                    -Dsonar.language=java  \
+                    -Dsonar.java.binaries=target/classes/
+                        """
+                }
+
+            }
+        }
+        stage('JFrog-Setup') {
+            steps {
+                rtPublishBuildInfo (
+                        serverId: "artifactory"
+                )
+            }
+        }
+    }
+}
